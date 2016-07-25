@@ -1,0 +1,20 @@
+<application>
+<name>Demo Force Imitation</name>
+    <dependencies>
+            <port>/icub/left_arm/state:o</port>
+            <port>/wholeBodyDynamics/filtered/inertial:o</port>
+            <port>/skinManager/skin_events:o</port>
+        </dependencies>
+    <module>
+            <name>demoForceImitation</name>
+            <parameters></parameters>
+            <node>macsi03</node>
+            <tag>demoForceControl</tag>
+    </module>
+    <connection>
+            <from>/skinManager/skin_events:o</from>
+            <to>/demoForceControl2/skin_contacts:i</to>
+            <protocol>udp</protocol>
+    </connection>
+
+</application>

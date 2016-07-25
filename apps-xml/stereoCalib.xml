@@ -1,0 +1,57 @@
+<application>
+<name>Stereo Calibration</name>
+<dependencies>
+      <port>/icub/camcalib/left/out</port>
+      <port>/icub/camcalib/right/out</port>
+      <port>/iKinGazeCtrl/head/rpc</port>
+</dependencies>
+
+<module>
+      <name>stereoCalib</name>
+      <parameters>--from icubEyes.ini</parameters>
+	  <node>localhost</node>
+          <stdio>localhost</stdio>
+	<tag>StereoCalib</tag>
+   </module>
+   
+   <module>
+      <name>yarpview</name>
+      <parameters>--name /viewLeft --p 50</parameters>
+      <node>localhost</node>
+	<tag>view1</tag>
+   </module>
+
+   <module>
+      <name>yarpview</name>
+      <parameters>--name /viewRight --p 50</parameters>
+      <node>localhost</node>
+        <tag>view2</tag>
+   </module>
+   
+<connection>
+  <output>/stereoCalib/cam/left:o</output>
+  <input>/viewLeft</input>
+  <protocol>udp</protocol>
+</connection>
+
+<connection>
+  <output>/stereoCalib/cam/right:o</output>
+  <input>/viewRight</input>
+  <protocol>udp</protocol>
+</connection>
+
+<connection>
+  <output>/icub/cam/right</output>
+  <input>/stereoCalib/cam/right:i</input>
+  <protocol>udp</protocol>
+</connection>
+
+<connection>
+  <output>/icub/cam/left</output>
+  <input>/stereoCalib/cam/left:i</input>
+  <protocol>udp</protocol>
+</connection>
+
+
+
+</application>

@@ -1,0 +1,61 @@
+<application>
+<name>EDHHI: Task Recorder : Record arm trajectories</name>
+    <dependencies>
+    	<port>/icub/right_arm/state:o</port>
+      <port>/icub/left_arm/state:o</port>
+      <port>/icub/cartesianController/right_arm/state:o</port>
+      <port>/icub/cartesianController/left_arm/state:o</port>
+    	<port>/wholeBodyDynamics/right_arm/Torques:o</port>
+    </dependencies>
+
+<!-- OLD VERSION
+    <module>
+        <name>recordArms</name>
+        <parameters> </parameters>
+        <node>macsi03</node>
+        <stdio>macsi03</stdio>
+        <tag>recordArms</tag>
+    </module>
+
+    <module>
+        <name>recordArmsGUI</name>
+        <node>macsi03</node>
+		  <stdio>macsi03</stdio>
+        <tag>recordArmsGUI</tag>
+    </module>
+
+
+    <connection>
+            <from>/recordArms/gui:o</from>
+            <to>/recordArms/rpc</to>
+            <protocol>tcp</protocol>
+    </connection>
+-->
+
+
+    <module>
+        <name>taskRecorder</name>
+        <parameters> </parameters>
+        <node>macsi03</node>
+        <stdio>macsi03</stdio>
+        <tag>taskRecorder</tag>
+    </module>
+
+    <module>
+        <name>taskRecorderGUI</name>
+        <node>macsi03</node>
+		  <stdio>macsi03</stdio>
+        <tag>taskRecorderGUI</tag>
+    </module>
+
+
+    <connection>
+            <from>/taskRecorder/gui:o</from>
+            <to>/taskRecorder/rpc</to>
+            <protocol>tcp</protocol>
+    </connection>
+
+
+
+</application>
+

@@ -1,0 +1,147 @@
+<application>
+<name>Dump: upper body - dynamics V2 (joint torque sensors) </name>
+<dependencies>
+	<port>/icub/right_arm/state:o</port>
+	<port>/icub/left_arm/state:o</port>
+	<port>/icub/torso/state:o</port>
+	<port>/icub/head/state:o</port>
+</dependencies>
+
+<!-- JOINTS -->
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /dump_UB_dyn_v2/head --type bottle --rxTime</parameters>
+	<node>macsi03</node>
+	<stdio>macsi03</stdio>
+	<tag>head-joints</tag>
+</module>
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /dump_UB_dyn_v2/leftArm --type bottle --rxTime</parameters>
+	<node>macsi03</node>
+	<stdio>macsi03</stdio>
+	<tag>left-arm-joints</tag>
+</module>
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /dump_UB_dyn_v2/rightArm --type bottle --rxTime</parameters>
+	<node>macsi03</node>
+	<stdio>macsi03</stdio>
+	<tag>right-arm-joints</tag>
+</module>
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /dump_UB_dyn_v2/torso --type bottle --rxTime</parameters>
+	<node>macsi03</node>
+	<stdio>macsi03</stdio>
+	<tag>torso-joints</tag>
+</module>
+<!-- inertial -->
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /dump_UB_dyn_v2/inertial --type bottle --rxTime</parameters>
+	<node>macsi03</node>
+	<stdio>macsi03</stdio>
+	<tag>inertial-sensor</tag>
+</module>
+<!-- FT sensor -->
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /dump_UB_dyn_v2/leftArmFTS --type bottle --rxTime</parameters>
+	<node>macsi03</node>
+	<stdio>macsi03</stdio>
+	<tag>left-arm-ft-sensor</tag>
+</module>
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /dump_UB_dyn_v2/rightArmFTS --type bottle --rxTime</parameters>
+	<node>macsi03</node>
+	<stdio>macsi03</stdio>
+	<tag>right-arm-ft-sensor</tag>
+</module>
+<!-- joint torque sensors -->
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /dump_UB_dyn_v2/rightArmJTS --type bottle --rxTime</parameters>
+	<node>macsi03</node>
+	<stdio>macsi03</stdio>
+	<tag>right-arm-jt-sensor</tag>
+</module>
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /dump_UB_dyn_v2/leftArmJTS --type bottle --rxTime</parameters>
+	<node>macsi03</node>
+	<stdio>macsi03</stdio>
+	<tag>left-arm-jt-sensor</tag>
+</module>
+<!-- skin contacts -->
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /dump_UB_dyn_v2/skinContacts --type bottle --rxTime</parameters>
+	<node>macsi03</node>
+	<stdio>macsi03</stdio>
+	<tag>skin-events</tag>
+</module>
+
+
+<!-- joints -->
+<connection>
+  <from>/icub/right_arm/state:o</from>
+  <to>/dump_UB_dyn_v2/rightArm</to>
+  <protocol>udp</protocol>
+</connection>
+<connection>
+  <from>/icub/left_arm/state:o</from>
+  <to>/dump_UB_dyn_v2/leftArm</to>
+  <protocol>udp</protocol>
+</connection>
+<connection>
+  <from>/icub/head/state:o</from>
+  <to>/dump_UB_dyn_v2/head</to>
+  <protocol>udp</protocol>
+</connection>
+<connection>
+  <from>/icub/torso/state:o</from>
+  <to>/dump_UB_dyn_v2/torso</to>
+  <protocol>tcp</protocol>
+</connection>
+<!-- inertial -->
+<connection>
+  <from>/wholeBodyDynamics/filtered/inertial:o</from>
+  <to>/dump_UB_dyn_v2/inertial</to>
+  <protocol>udp</protocol>
+</connection>
+<!-- FT sensor -->
+<connection>
+  <from>/icub/left_arm/analog:o</from>
+  <to>/dump_UB_dyn_v2/leftArmFTS</to>
+  <protocol>udp</protocol>
+</connection>
+<connection>
+  <from>/icub/right_arm/analog:o</from>
+  <to>/dump_UB_dyn_v2/rightArmFTS</to>
+  <protocol>udp</protocol>
+</connection>
+<!-- joint torque sensors -->
+<connection>
+  <from>/icub/joint_torque_sensor/right_arm/analog:o</from>
+  <to>/dump_UB_dyn_v2/rightArmJTS</to>
+  <protocol>udp</protocol>
+</connection>
+<connection>
+  <from>/icub/joint_torque_sensor/left_arm/analog:o</from>
+  <to>/dump_UB_dyn_v2/leftArmJTS</to>
+  <protocol>udp</protocol>
+</connection>
+<!-- skin contacts -->
+<connection>
+  <from>/skinManager/skin_events:o</from>
+  <to>/dump_UB_dyn_v2/skinContacts</to>
+  <protocol>udp</protocol>
+</connection>
+
+
+
+</application>
+
+

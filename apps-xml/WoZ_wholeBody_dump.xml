@@ -1,0 +1,395 @@
+<application>
+<name>EDHHI: Data dumpers: whole body </name>
+<dependencies>
+   	<port>/wholeBodyDynamics/filtered/inertial:o</port>
+   	<port>/icub/right_arm/state:o</port>
+    	<port>/icub/left_arm/state:o</port>
+    	<port>/icub/torso/state:o</port>
+    	<port>/icub/head/state:o</port>
+   	<port>/icub/cartesianController/left_arm/state:o</port>
+   	<port>/icub/cartesianController/right_arm/state:o</port>
+	<port>/iKinGazeCtrl/x:o</port>
+	<port>/icub/skin/left_hand</port>
+	<port>/icub/skin/right_hand</port>
+	<port>/icub/skin/right_forearm</port>
+	<port>/icub/skin/left_forearm</port>
+	<port>/icub/skin/torso</port>
+	<port>/icub/right_arm/analog:o</port>
+	<port>/icub/left_arm/analog:o</port>
+</dependencies>
+
+<!-- SKIN -->
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/skin_left_hand --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<tag>skin-left_hand</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/skin_right_hand --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<tag>skin-right_hand</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/skin_right_forearm --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<tag>skin-right_forearm</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/skin_left_forearm --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<tag>skin-left_forearm</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/skin_left_arm --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<tag>skin-left_arm</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/skin_right_arm --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<tag>skin-right_arm</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/skin_torso --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<tag>skin-torso</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+<!-- skin contacts -->
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/skinContacts --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<stdio>macsi04</stdio>
+	<tag>skin-events</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+
+<!-- inertial -->
+<module>
+    	<name>dataDumper</name>
+    	<parameters>--name /EDHHI_dump/inertial --type bottle --rxTime</parameters>
+    	<node>macsi04</node>
+    	<tag>inertial-sensor</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+
+<!-- GAZE -->
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/gaze --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<tag>gaze-x</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+
+<!-- FT sensor -->
+<module>
+    	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/leftArmFTS --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<tag>left-arm-ft-sensor</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/rightArmFTS --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<stdio>macsi04</stdio>
+	<tag>right-arm-ft-sensor</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+
+<!-- COM -->
+<!--<module>
+    	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/globalCOM --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<stdio>macsi04</stdio>
+	<tag>global-COM</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/upperBodyCOM --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<stdio>macsi04</stdio>
+	<tag>upper-body-COM</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+-->
+<!-- joints -->
+<module>
+   	 <name>dataDumper</name>
+	 <parameters>--name /EDHHI_dump/head --type bottle --rxTime</parameters>
+	 <node>macsi04</node>
+	 <tag>head-joints</tag>
+	 <workdir>/home/icub/</workdir>
+</module>
+<module>
+    	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/leftArm --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<stdio>macsi04</stdio>
+	<tag>left-arm-joints</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+<module>
+    	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/rightArm --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<tag>right-arm-joints</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+<module>
+    	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/torso --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<tag>torso-joints</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+<!-- cartesian -->
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/CartLeftArm --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<tag>left-x</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/CartRightArm --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<tag>right-x</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+<!-- joint torques -->
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/leftArmTorques --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<tag>left-arm-torques</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+<module>
+    	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/rightArmTorques --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<tag>right-arm-torques</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+<!--<module>
+    	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/torsoTorques --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<tag>torso-torques</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+-->
+<!-- joint torque sensors -->
+<!--
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/rightArmJTS --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<tag>right-arm-jt-sensor</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/leftArmJTS --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<tag>left-arm-jt-sensor</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+-->
+<!-- end effectors -->
+<module>
+    	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/leftArmEndEffector --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<tag>left-arm-endeffector</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+<module>
+    	<name>dataDumper</name>
+	<parameters>--name /EDHHI_dump/rightArmEndEffector --type bottle --rxTime</parameters>
+	<node>macsi04</node>
+	<tag>right-arm-endeffector</tag>
+	<workdir>/home/icub/</workdir>
+</module>
+
+
+
+<!--################################ CONECTIONS -->
+<!-- Skin  -->
+<connection>
+  <from>/icub/skin/right_hand_comp</from>
+  <to>/EDHHI_dump/skin_right_hand</to>
+  <protocol>udp</protocol>
+</connection>
+
+<connection>
+  <from>/icub/skin/left_hand_comp</from>
+  <to>/EDHHI_dump/skin_left_hand</to>
+  <protocol>udp</protocol>
+</connection>
+
+<connection>
+  <from>/icub/skin/left_forearm_comp</from>
+  <to>/EDHHI_dump/skin_left_forearm</to>
+  <protocol>udp</protocol>
+</connection>
+
+<connection>
+  <from>/icub/skin/right_forearm_comp</from>
+  <to>/EDHHI_dump/skin_right_forearm</to>
+  <protocol>udp</protocol>
+</connection>
+
+<connection>
+  <from>/icub/skin/left_arm_comp</from>
+  <to>/EDHHI_dump/skin_left_arm</to>
+  <protocol>udp</protocol>
+</connection>
+
+<connection>
+  <from>/icub/skin/right_arm_comp</from>
+  <to>/EDHHI_dump/skin_right_arm</to>
+  <protocol>udp</protocol>
+</connection>
+
+<connection>
+  <from>/icub/skin/torso_comp</from>
+  <to>/EDHHI_dump/skin_torso</to>
+  <protocol>udp</protocol>
+</connection>
+
+<!-- skin contacts -->
+<connection>
+  <from>/skinManager/skin_events:o</from>
+  <to>/EDHHI_dump/skinContacts</to>
+  <protocol>udp</protocol>
+</connection>
+
+<!-- inertial -->
+<connection>
+  <from>/wholeBodyDynamics/filtered/inertial:o</from>
+  <to>/EDHHI_dump/inertial</to>
+  <protocol>udp</protocol>
+</connection>
+
+<!-- GAZE -->
+<connection>
+  <from>/iKinGazeCtrl/x:o</from>
+  <to>/EDHHI_dump/gaze</to>
+  <protocol>udp</protocol>
+</connection>
+<!-- FT sensor -->
+<connection>
+  <from>/icub/left_arm/analog:o</from>
+  <to>/EDHHI_dump/leftArmFTS</to>
+  <protocol>udp</protocol>
+</connection>
+<connection>
+  <from>/icub/right_arm/analog:o</from>
+  <to>/EDHHI_dump/rightArmFTS</to>
+  <protocol>udp</protocol>
+</connection>
+<!-- COM -->
+<connection>
+  <from>/wholeBodyDynamics/upper_body/com:o</from>
+  <to>/EDHHI_dump/upperBodyCOM</to>
+  <protocol>udp</protocol>
+</connection>
+<connection>
+  <from>/wholeBodyDynamics/com:o</from>
+  <to>/EDHHI_dump/globalCOM</to>
+  <protocol>udp</protocol>
+</connection>
+<!-- joints -->
+<connection>
+  <from>/icub/right_arm/state:o</from>
+  <to>/EDHHI_dump/rightArm</to>
+  <protocol>udp</protocol>
+</connection>
+<connection>
+  <from>/icub/left_arm/state:o</from>
+  <to>/EDHHI_dump/leftArm</to>
+  <protocol>udp</protocol>
+</connection>
+<connection>
+  <from>/icub/head/state:o</from>
+  <to>/EDHHI_dump/head</to>
+  <protocol>udp</protocol>
+</connection>
+<connection>
+  <from>/icub/torso/state:o</from>
+  <to>/EDHHI_dump/torso</to>
+  <protocol>udp</protocol>
+</connection>
+<!-- cartesian -->
+<connection>
+  <from>/icub/cartesianController/left_arm/state:o</from>
+  <to>/EDHHI_dump/CartLeftArm</to>
+  <protocol>udp</protocol>
+</connection>
+<connection>
+  <from>/icub/cartesianController/right_arm/state:o</from>
+  <to>/EDHHI_dump/CartRightArm</to>
+  <protocol>udp</protocol>
+</connection>
+<!-- joint torques -->
+<connection>
+  <from>/wholeBodyDynamics/right_arm/Torques:o</from>
+  <to>/EDHHI_dump/rightArmTorques</to>
+  <protocol>udp</protocol>
+</connection>
+<connection>
+  <from>/wholeBodyDynamics/left_arm/Torques:o</from>
+  <to>/EDHHI_dump/leftArmTorques</to>
+  <protocol>udp</protocol>
+</connection>
+<connection>
+  <from>/wholeBodyDynamics/torso/Torques:o</from>
+  <to>/EDHHI_dump/torsoTorques</to>
+  <protocol>udp</protocol>
+</connection>
+<!-- joint torque sensors -->
+<connection>
+  <from>/icub/joint_torque_sensor/right_arm/analog:o</from>
+  <to>/EDHHI_dump/rightArmJTS</to>
+  <protocol>udp</protocol>
+</connection>
+<connection>
+  <from>/icub/joint_torque_sensor/left_arm/analog:o</from>
+  <to>/EDHHI_dump/leftArmJTS</to>
+  <protocol>udp</protocol>
+</connection>
+<!-- end effectors -->
+<connection>
+  <from>/wholeBodyDynamics/right_arm/endEffectorWrench:o</from>
+  <to>/EDHHI_dump/rightArmEndEffector</to>
+  <protocol>udp</protocol>
+</connection>
+<connection>
+  <from>/wholeBodyDynamics/left_arm/endEffectorWrench:o</from>
+  <to>/EDHHI_dump/leftArmEndEffector</to>
+  <protocol>udp</protocol>
+</connection>
+
+
+</application>

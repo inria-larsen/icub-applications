@@ -1,0 +1,82 @@
+<application>
+<name>EDHHI: Wizard Of Oz</name>
+
+        <dependencies>
+                <port>/iKinGazeCtrl/head/rpc</port>
+                <port>/icub/cartesianController/right_arm/state:o</port>
+                <port>/icub/cartesianController/left_arm/state:o</port>
+        </dependencies>
+
+
+      
+        <module>
+            <name>iSpeak_all</name>
+            <node>macsi03</node>
+            <tag>speech</tag>
+        </module>
+
+        <module>
+                <name>actionsServer2</name>
+                <parameters>--from actionsServer2_EDHHI_icub2.ini</parameters>
+                <node>macsi03</node>
+                <tag>manager</tag>                
+        </module>
+
+        <module>
+            <name>taskPlayer</name>
+				<!--<parameters></parameters>-->
+            <node>macsi03</node>
+            <tag>taskPlayer</tag>
+        </module>
+  
+        <module>
+                <name>WoZ</name>
+                <!-- DO NOT USE A PARAMETER
+			<parameters>--file conf/WoZ_EDHHI_icub2.ini</parameters>-->
+                <node>macsi03</node>
+                <tag>WoZ</tag>
+                <stdio>macsi03</stdio>
+        </module>
+ 
+
+<!-- CONNECTIONS -->
+
+        <connection>
+                <from>/WoZ/expression:o</from>
+                <to>/icub/face/emotions/in</to>
+                <protocol>tcp</protocol>
+        </connection>
+
+        <connection>
+                <from>/WoZ/taskPlayer:o</from>
+                <to>/taskPlayer/rpc:i</to>
+                <protocol>tcp</protocol>
+        </connection>
+
+
+        <connection>
+                <from>/WoZ/speech:o</from>
+                <to>/iSpeak_all</to>
+                <protocol>tcp</protocol>
+        </connection>
+
+       <connection>
+                <from>/WoZ/cmd:o</from>
+                <to>/actionsServer2/rpc:i</to>
+                <protocol>tcp</protocol>
+        </connection>
+
+        <connection>
+                <from>/taskPlayer/display:o</from>
+                <to>/iCubGui/objects</to>
+                <protocol>tcp</protocol>
+        </connection>
+
+        <connection>
+                <from>/actionsServer2/speech:o</from>
+                <to>/iSpeak_all</to>
+                <protocol>tcp</protocol>
+        </connection>
+
+
+</application>
