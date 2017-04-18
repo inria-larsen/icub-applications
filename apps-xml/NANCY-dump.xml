@@ -1,0 +1,123 @@
+<application>
+<name>NANCY: Dump upperbody </name>
+<dependencies>
+	<port>/icub/right_arm/state:o</port>
+	<port>/icub/left_arm/state:o</port>
+	<port>/icub/torso/state:o</port>
+	<port>/icub/head/state:o</port>
+</dependencies>
+
+<!-- JOINTS -->
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /dump_upperbody/head --type bottle --rxTime</parameters>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
+	<tag>head-joints</tag>
+</module>
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /dump_upperbody/leftArm --type bottle --rxTime</parameters>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
+	<tag>left-arm-joints</tag>
+</module>
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /dump_upperbody/rightArm --type bottle --rxTime</parameters>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
+	<tag>right-arm-joints</tag>
+</module>
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /dump_upperbody/torso --type bottle --rxTime</parameters>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
+	<tag>torso-joints</tag>
+</module>
+<!-- inertial -->
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /dump_upperbody/inertial --type bottle --rxTime</parameters>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
+	<tag>inertial-sensor</tag>
+</module>
+<!-- FT sensor -->
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /dump_upperbody/leftArmFTS --type bottle --rxTime</parameters>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
+	<tag>left-arm-ft-sensor</tag>
+</module>
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /dump_upperbody/rightArmFTS --type bottle --rxTime</parameters>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
+	<tag>right-arm-ft-sensor</tag>
+</module>
+
+<!-- skin contacts -->
+<module>
+	<name>dataDumper</name>
+	<parameters>--name /dump_upperbody/skinContacts --type bottle --rxTime</parameters>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
+	<tag>skin-events</tag>
+</module>
+
+
+<!-- joints -->
+<connection>
+  <from>/icub/right_arm/state:o</from>
+  <to>/dump_upperbody/rightArm</to>
+  <protocol>udp</protocol>
+</connection>
+<connection>
+  <from>/icub/left_arm/state:o</from>
+  <to>/dump_upperbody/leftArm</to>
+  <protocol>udp</protocol>
+</connection>
+<connection>
+  <from>/icub/head/state:o</from>
+  <to>/dump_upperbody/head</to>
+  <protocol>udp</protocol>
+</connection>
+<connection>
+  <from>/icub/torso/state:o</from>
+  <to>/dump_upperbody/torso</to>
+  <protocol>udp</protocol>
+</connection>
+<!-- inertial -->
+<connection>
+  <from>/wholeBodyDynamics/filtered/inertial:o</from>
+  <to>/dump_upperbody/inertial</to>
+  <protocol>udp</protocol>
+</connection>
+<!-- FT sensor -->
+<connection>
+  <from>/icub/left_arm/analog:o</from>
+  <to>/dump_upperbody/leftArmFTS</to>
+  <protocol>udp</protocol>
+</connection>
+<connection>
+  <from>/icub/right_arm/analog:o</from>
+  <to>/dump_upperbody/rightArmFTS</to>
+  <protocol>udp</protocol>
+</connection>
+
+<!-- skin contacts -->
+<connection>
+  <from>/skinManager/skin_events:o</from>
+  <to>/dump_upperbody/skinContacts</to>
+  <protocol>udp</protocol>
+</connection>
+
+
+
+</application>
+
+
