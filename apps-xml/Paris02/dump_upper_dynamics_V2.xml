@@ -103,7 +103,7 @@
 <connection>
   <from>/icub/torso/state:o</from>
   <to>/dump_UB_dyn_v2/torso</to>
-  <protocol>tcp</protocol>
+  <protocol>udp</protocol>
 </connection>
 <!-- inertial -->
 <connection>
