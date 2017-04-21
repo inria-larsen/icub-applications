@@ -1,5 +1,5 @@
 <application>
-<name>Dump: upper body - dynamics V2 (joint torque sensors) </name>
+<name>Paris02: Dump: upper body - dynamics V2 (with joint torque sensors) </name>
 <dependencies>
 	<port>/icub/right_arm/state:o</port>
 	<port>/icub/left_arm/state:o</port>
