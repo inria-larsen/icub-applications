@@ -1,5 +1,5 @@
 <application>
-<name>NANCY: Dump upperbody </name>
+<name>NANCY: Dump upperbody with FTS</name>
 <dependencies>
 	<port>/icub/right_arm/state:o</port>
 	<port>/icub/left_arm/state:o</port>
