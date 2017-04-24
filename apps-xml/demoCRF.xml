@@ -1,0 +1,17 @@
+<application>
+<name>Nancy: demo CRF</name>
+
+    <dependencies>
+			<!--<port>/icub/face/emotions/out</port>-->
+    </dependencies>
+      
+    <module>
+        <name>demoYoga</name>
+        <!--<parameters>--package acapela-tts</parameters>-->
+        <node>icub01</node>
+        <stdio></stdio>
+    </module>
+ 
+
+</application>
+
