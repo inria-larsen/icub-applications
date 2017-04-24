@@ -1,13 +1,13 @@
 <application>
-<name>Nancy: Demo Red-Ball - Head only, NO arms</name>
+<name>Nancy: Red-Ball Demo (compliant - impedance)</name>
 
         <dependencies>
                 <port>/icub/camcalib/left/out</port>
                 <port>/iKinGazeCtrl/rpc</port>
                 <port>/icub/cartesianController/right_arm/state:o</port>
                 <port>/icub/cartesianController/left_arm/state:o</port>
-				<port>/icub/face/emotions/out</port>
-				<port>/iSpeak</port>
+                <port>/wholeBodyDynamics/right_arm/FT:i</port>
+                <port>/wholeBodyDynamics/left_arm/FT:i</port>
         </dependencies>
       
         <module>
@@ -17,7 +17,7 @@
    
         <module>
                 <name>demoRedBall</name>
-				<parameters>--from config_HeadOnly.ini</parameters>
+                <parameters>--from config_Impedance.ini</parameters>
                 <node>icub01</node>
         </module>
   

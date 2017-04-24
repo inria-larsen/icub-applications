@@ -1,0 +1,22 @@
+<application>
+<name>Nancy: speech</name>
+
+    <dependencies>
+			<!--<port>/icub/face/emotions/out</port>-->
+    </dependencies>
+      
+    <module>
+        <name>iSpeak</name>
+        <!--<parameters>--package acapela-tts</parameters>-->
+        <node>icub01</node>
+        <stdio></stdio>
+    </module>
+  
+    <connection>
+        <from>/iSpeak/emotions:o</from>
+        <to>/icub/face/emotions/in</to>
+        <protocol>tcp</protocol>
+    </connection>
+
+</application>
+
