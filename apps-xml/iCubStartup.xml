@@ -1,48 +1,94 @@
+
 <application>
-<name>iCubStartup</name>
+<name>Nancy: iCubStartup HEAD V2</name>
 
         <dependencies>
         </dependencies>
-      
-  
+
+        <module>
+                <name>yarplogger</name>
+                <parameters>--start --no_stop</parameters>
+                <node>icubsrv</node>
+        </module>
+
+
+        <module>
+                <name>yarprobotinterface</name>
+                <node>pc104</node>
+        </module>
+
         <module>
                 <name>iKinCartesianSolver</name>
                 <parameters>--part right_arm</parameters>
-                <node>macsi04</node>
-                <tag>rightArmSolver</tag>
+                <node>icubsrv</node>
+                <dependencies>
+<!--timeout was in 60 : here it is the Oriane's modification that we can change -->
+                    <port timeout="60.0" request="is_ready" reply="[ok]">/icub/yarprobotinterface</port>
+                </dependencies>
         </module>
 
         <module>
                 <name>iKinCartesianSolver</name>
                 <parameters>--part left_arm</parameters>
-                <node>macsi04</node>
-                <tag>leftArmSolver</tag>
+                <node>icubsrv</node>
+                <dependencies>
+                    <port timeout="60.0" request="is_ready" reply="[ok]">/icub/yarprobotinterface</port>
+                </dependencies>
         </module>
 
+       
         <module>
                 <name>iKinGazeCtrl</name>
-					 <parameters>--headV2</parameters>
-                <node>macsi02</node>
-                <tag>gazeController</tag>
+                <parameters>--from iKinGazeCtrl.ini</parameters>
+                <node>icubsrv</node>
+                <dependencies>
+                    <port timeout="60.0" request="is_ready" reply="[ok]">/icub/yarprobotinterface</port>
+                    <port timeout="60">/imuFilter/inertial:o</port>
+                </dependencies>
         </module>
 
-        <!-- Enable/disable wholeBodyDynamics if you have/don't have torque sensors -->
+        <!-- Enable/disable wholeBodyDynamics if you do/don't have torque sensors -->
         <module>
                 <name>wholeBodyDynamics</name>
                 <!-- Remember to add the "--headV2" parameter for robots equipped with head v. 2.0 -->
-                <parameters>--headV2 --autoconnect</parameters>
-                <node>macsi02</node>
-                <tag>wholeBodyDynamicsTag</tag>
+                <parameters>--autoconnect --headV2</parameters>
+                <node>icubsrv</node>
+                <dependencies>
+                    <port timeout="60.0" request="is_ready" reply="[ok]">/icub/yarprobotinterface</port>
+                </dependencies>
         </module>
 
-        <!-- Enable/disable gravityCompensator if you have/don't have torque sensors -->
+        <!-- Enable/disable gravityCompensator if you do/don't have torque sensors -->
         <module>
                 <name>gravityCompensator</name>
                 <!-- Remember to add the "--headV2" parameter for robots equipped with head v. 2.0 -->
                 <parameters>--headV2</parameters>
-                <node>macsi02</node>
-                <tag>gravityCompensatorTag</tag>
+                <node>icubsrv</node>
+                <dependencies>
+                    <port timeout="60">/wholeBodyDynamics/rpc:i</port>
+                </dependencies>
         </module>
 
+        <module>
+                <name>fingersTuner</name>
+                <node>icubsrv</node>
+                <dependencies>
+                    <port timeout="60.0" request="is_ready" reply="[ok]">/icub/yarprobotinterface</port>
+                </dependencies>
+        </module>
+
+        <module>
+                <name>imuFilter</name>
+                <node>pc104</node>
+                <dependencies>
+                    <port timeout="60">/icub/inertial</port>
+                </dependencies>
+        </module>
+
+        <connection>
+                <from>/icub/inertial</from>
+                <to>/imuFilter/inertial:i</to>
+                <protocol>tcp</protocol>
+        </connection>
 
 </application>

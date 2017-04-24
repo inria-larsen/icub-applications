@@ -10,11 +10,11 @@
             <parameters></parameters>
             <node>icub01</node>
     </module>
-<!--    <connection>
+    <connection>
             <from>/skinManager/skin_events:o</from>
             <to>/demoForceControl2/skin_contacts:i</to>
             <protocol>udp</protocol>
     </connection>
--->
+
 
 </application>
