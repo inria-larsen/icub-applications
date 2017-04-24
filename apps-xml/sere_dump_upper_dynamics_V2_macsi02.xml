@@ -1,5 +1,5 @@
 <application>
-<name>SERE-TUD: Dump upperbody-dyn V2 (joint torque sensors) - macsi02 </name>
+<name>Paris 02: SERE-TUD: Dump upperbody-dyn V2 (joint torque sensors) - macsi02 </name>
 <dependencies>
 	<port>/icub/right_arm/state:o</port>
 	<port>/icub/left_arm/state:o</port>

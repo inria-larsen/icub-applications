@@ -1,5 +1,5 @@
 <application>
-<name>Nancy: Red-Ball Demo (compliant - impedance)</name>
+<name>Nancy: Demo Red-Ball (compliant - impedance)</name>
 
         <dependencies>
                 <port>/icub/camcalib/left/out</port>

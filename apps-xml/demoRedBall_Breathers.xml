@@ -1,5 +1,5 @@
 <application>
-<name>Nancy: Red-Ball Demo with Breathers and LookSkin</name>
+<name>Nancy: Demo Red-Ball (impedance, Breathers and LookSkin)</name>
 
     <dependencies>
         <port>/icub/camcalib/left/out</port>

@@ -1,5 +1,5 @@
 <application>
-<name>Demo Force Imitation</name>
+<name>Nancy: Demo Force Imitation</name>
     <dependencies>
             <port>/icub/left_arm/state:o</port>
             <port>/wholeBodyDynamics/filtered/inertial:o</port>
@@ -8,13 +8,13 @@
     <module>
             <name>demoForceImitation</name>
             <parameters></parameters>
-            <node>macsi03</node>
-            <tag>demoForceControl</tag>
+            <node>icub01</node>
     </module>
-    <connection>
+<!--    <connection>
             <from>/skinManager/skin_events:o</from>
             <to>/demoForceControl2/skin_contacts:i</to>
             <protocol>udp</protocol>
     </connection>
+-->
 
 </application>
