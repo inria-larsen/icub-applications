@@ -20,181 +20,181 @@
 
 <!-- SKIN -->
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/skin_left_hand --type bottle --rxTime</parameters>
-	<node>macsi04</node>
+	<node>icub01</node>
 	<tag>skin-left_hand</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/skin_right_hand --type bottle --rxTime</parameters>
-	<node>macsi04</node>
+	<node>icub01</node>
 	<tag>skin-right_hand</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/skin_right_forearm --type bottle --rxTime</parameters>
-	<node>macsi04</node>
+	<node>icub01</node>
 	<tag>skin-right_forearm</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/skin_left_forearm --type bottle --rxTime</parameters>
-	<node>macsi04</node>
+	<node>icub01</node>
 	<tag>skin-left_forearm</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/skin_left_arm --type bottle --rxTime</parameters>
-	<node>macsi04</node>
+	<node>icub01</node>
 	<tag>skin-left_arm</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/skin_right_arm --type bottle --rxTime</parameters>
-	<node>macsi04</node>
+	<node>icub01</node>
 	<tag>skin-right_arm</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/skin_torso --type bottle --rxTime</parameters>
-	<node>macsi04</node>
+	<node>icub01</node>
 	<tag>skin-torso</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 <!-- skin contacts -->
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/skinContacts --type bottle --rxTime</parameters>
-	<node>macsi04</node>
-	<stdio>macsi04</stdio>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
 	<tag>skin-events</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 
 <!-- inertial -->
 <module>
-    	<name>dataDumper</name>
+    	<name>yarpdatadumper</name>
     	<parameters>--name /EDHHI_dump/inertial --type bottle --rxTime</parameters>
-    	<node>macsi04</node>
+    	<node>icub01</node>
     	<tag>inertial-sensor</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 
 <!-- GAZE -->
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/gaze --type bottle --rxTime</parameters>
-	<node>macsi04</node>
+	<node>icub01</node>
 	<tag>gaze-x</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 
 <!-- FT sensor -->
 <module>
-    	<name>dataDumper</name>
+    	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/leftArmFTS --type bottle --rxTime</parameters>
-	<node>macsi04</node>
+	<node>icub01</node>
 	<tag>left-arm-ft-sensor</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/rightArmFTS --type bottle --rxTime</parameters>
-	<node>macsi04</node>
-	<stdio>macsi04</stdio>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
 	<tag>right-arm-ft-sensor</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 
 <!-- COM -->
 <!--<module>
-    	<name>dataDumper</name>
+    	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/globalCOM --type bottle --rxTime</parameters>
-	<node>macsi04</node>
-	<stdio>macsi04</stdio>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
 	<tag>global-COM</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/upperBodyCOM --type bottle --rxTime</parameters>
-	<node>macsi04</node>
-	<stdio>macsi04</stdio>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
 	<tag>upper-body-COM</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 -->
 <!-- joints -->
 <module>
-   	 <name>dataDumper</name>
+   	 <name>yarpdatadumper</name>
 	 <parameters>--name /EDHHI_dump/head --type bottle --rxTime</parameters>
-	 <node>macsi04</node>
+	 <node>icub01</node>
 	 <tag>head-joints</tag>
 	 <workdir>/home/icub/</workdir>
 </module>
 <module>
-    	<name>dataDumper</name>
+    	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/leftArm --type bottle --rxTime</parameters>
-	<node>macsi04</node>
-	<stdio>macsi04</stdio>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
 	<tag>left-arm-joints</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 <module>
-    	<name>dataDumper</name>
+    	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/rightArm --type bottle --rxTime</parameters>
-	<node>macsi04</node>
+	<node>icub01</node>
 	<tag>right-arm-joints</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 <module>
-    	<name>dataDumper</name>
+    	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/torso --type bottle --rxTime</parameters>
-	<node>macsi04</node>
+	<node>icub01</node>
 	<tag>torso-joints</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 <!-- cartesian -->
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/CartLeftArm --type bottle --rxTime</parameters>
-	<node>macsi04</node>
+	<node>icub01</node>
 	<tag>left-x</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/CartRightArm --type bottle --rxTime</parameters>
-	<node>macsi04</node>
+	<node>icub01</node>
 	<tag>right-x</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 <!-- joint torques -->
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/leftArmTorques --type bottle --rxTime</parameters>
-	<node>macsi04</node>
+	<node>icub01</node>
 	<tag>left-arm-torques</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 <module>
-    	<name>dataDumper</name>
+    	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/rightArmTorques --type bottle --rxTime</parameters>
-	<node>macsi04</node>
+	<node>icub01</node>
 	<tag>right-arm-torques</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 <!--<module>
-    	<name>dataDumper</name>
+    	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/torsoTorques --type bottle --rxTime</parameters>
-	<node>macsi04</node>
+	<node>icub01</node>
 	<tag>torso-torques</tag>
 	<workdir>/home/icub/</workdir>
 </module>
@@ -202,32 +202,32 @@
 <!-- joint torque sensors -->
 <!--
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/rightArmJTS --type bottle --rxTime</parameters>
-	<node>macsi04</node>
+	<node>icub01</node>
 	<tag>right-arm-jt-sensor</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/leftArmJTS --type bottle --rxTime</parameters>
-	<node>macsi04</node>
+	<node>icub01</node>
 	<tag>left-arm-jt-sensor</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 -->
 <!-- end effectors -->
 <module>
-    	<name>dataDumper</name>
+    	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/leftArmEndEffector --type bottle --rxTime</parameters>
-	<node>macsi04</node>
+	<node>icub01</node>
 	<tag>left-arm-endeffector</tag>
 	<workdir>/home/icub/</workdir>
 </module>
 <module>
-    	<name>dataDumper</name>
+    	<name>yarpdatadumper</name>
 	<parameters>--name /EDHHI_dump/rightArmEndEffector --type bottle --rxTime</parameters>
-	<node>macsi04</node>
+	<node>icub01</node>
 	<tag>right-arm-endeffector</tag>
 	<workdir>/home/icub/</workdir>
 </module>

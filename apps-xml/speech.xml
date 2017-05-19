@@ -8,6 +8,7 @@
     <module>
         <name>iSpeak</name>
         <!--<parameters>--package acapela-tts</parameters>-->
+        <parameters>--package festival</parameters>
         <node>icub01</node>
         <stdio></stdio>
     </module>

@@ -9,28 +9,28 @@
 
 <!-- JOINTS -->
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /dump_upperbody/head --type bottle --rxTime</parameters>
 	<node>icub01</node>
 	<stdio>icub01</stdio>
 	<tag>head-joints</tag>
 </module>
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /dump_upperbody/leftArm --type bottle --rxTime</parameters>
 	<node>icub01</node>
 	<stdio>icub01</stdio>
 	<tag>left-arm-joints</tag>
 </module>
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /dump_upperbody/rightArm --type bottle --rxTime</parameters>
 	<node>icub01</node>
 	<stdio>icub01</stdio>
 	<tag>right-arm-joints</tag>
 </module>
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /dump_upperbody/torso --type bottle --rxTime</parameters>
 	<node>icub01</node>
 	<stdio>icub01</stdio>
@@ -38,7 +38,7 @@
 </module>
 <!-- inertial -->
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /dump_upperbody/inertial --type bottle --rxTime</parameters>
 	<node>icub01</node>
 	<stdio>icub01</stdio>
@@ -46,23 +46,39 @@
 </module>
 <!-- FT sensor -->
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /dump_upperbody/leftArmFTS --type bottle --rxTime</parameters>
 	<node>icub01</node>
 	<stdio>icub01</stdio>
 	<tag>left-arm-ft-sensor</tag>
 </module>
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /dump_upperbody/rightArmFTS --type bottle --rxTime</parameters>
 	<node>icub01</node>
 	<stdio>icub01</stdio>
 	<tag>right-arm-ft-sensor</tag>
 </module>
 
+<!-- torques -->
+<module>
+	<name>yarpdatadumper</name>
+	<parameters>--name /dump_upperbody/leftArmTorques --type bottle --rxTime</parameters>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
+	<tag>left-arm-ft-torque</tag>
+</module>
+<module>
+	<name>yarpdatadumper</name>
+	<parameters>--name /dump_upperbody/rightArmTorques --type bottle --rxTime</parameters>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
+	<tag>right-arm-ft-torque</tag>
+</module>
+
 <!-- skin contacts -->
 <module>
-	<name>dataDumper</name>
+	<name>yarpdatadumper</name>
 	<parameters>--name /dump_upperbody/skinContacts --type bottle --rxTime</parameters>
 	<node>icub01</node>
 	<stdio>icub01</stdio>
@@ -106,6 +122,18 @@
 <connection>
   <from>/icub/right_arm/analog:o</from>
   <to>/dump_upperbody/rightArmFTS</to>
+  <protocol>udp</protocol>
+</connection>
+
+<!-- torques -->
+<connection>
+  <from>/wholeBodyDynamics/left_arm/Torques:o</from>
+  <to>/dump_upperbody/leftArmTorques</to>
+  <protocol>udp</protocol>
+</connection>
+<connection>
+  <from>/wholeBodyDynamics/right_arm/Torques:o</from>
+  <to>/dump_upperbody/rightArmTorques</to>
   <protocol>udp</protocol>
 </connection>
 
