@@ -1,0 +1,208 @@
+<application>
+	<name>dumpStandup2</name>
+	<dependencies>
+		<port>/wholeBodyDynamicsTree/left_arm/Torques:o</port>
+		<port>/wholeBodyDynamicsTree/right_arm/Torques:o</port>
+		<port>/wholeBodyDynamicsTree/left_leg/Torques:o</port>
+		<port>/wholeBodyDynamicsTree/right_leg/Torques:o</port>
+		<port>/wholeBodyDynamicsTree/torso/Torques:o</port>
+		<port>/sendForcesAndWrench:o</port>
+		<port>/wholeBodyDynamicsTree/right_foot/cartesianEndEffectorWrench:o</port>
+		<port>/wholeBodyDynamicsTree/left_foot/cartesianEndEffectorWrench:o</port>
+		<port>/wholeBodyDynamicsTree/left_arm/cartesianEndEffectorWrench:o</port>
+		<port>/wholeBodyDynamicsTree/right_arm/cartesianEndEffectorWrench:o</port>
+		<port>/icubSim/left_arm/state:o</port>
+		<port>/icubSim/left_leg/state:o</port>
+		<port>/icubSim/right_arm/state:o</port>
+		<port>/icubSim/right_leg/state:o</port>
+		<port>/icubSim/torso/state:o</port>
+		<port>/wholeBodyDynamicsTree/com:o</port>
+	</dependencies>
+	<module>
+		<name>yarpdatadumper</name>
+		<parameters>--name /dumperStandUpCODYCO/wholeBodyDynamicsTree/left_arm/Torques:o --type bottle  --rxTime</parameters>
+		<node>/icub01</node>
+	</module>
+	<connection>
+		<from>/wholeBodyDynamicsTree/left_arm/Torques:o</from>
+		<to>/dumperStandUpCODYCO/wholeBodyDynamicsTree/left_arm/Torques:o</to>
+		<protocol>udp</protocol>
+	</connection>
+	<module>
+		<name>yarpdatadumper</name>
+		<parameters>--name /dumperStandUpCODYCO/wholeBodyDynamicsTree/right_arm/Torques:o --type bottle  --rxTime</parameters>
+		<node>/icub01</node>
+	</module>
+	<connection>
+		<from>/wholeBodyDynamicsTree/right_arm/Torques:o</from>
+		<to>/dumperStandUpCODYCO/wholeBodyDynamicsTree/right_arm/Torques:o</to>
+		<protocol>udp</protocol>
+	</connection>
+	<module>
+		<name>yarpdatadumper</name>
+		<parameters>--name /dumperStandUpCODYCO/wholeBodyDynamicsTree/left_leg/Torques:o --type bottle  --rxTime</parameters>
+		<node>/icub01</node>
+	</module>
+	<connection>
+		<from>/wholeBodyDynamicsTree/left_leg/Torques:o</from>
+		<to>/dumperStandUpCODYCO/wholeBodyDynamicsTree/left_leg/Torques:o</to>
+		<protocol>udp</protocol>
+	</connection>
+	<module>
+		<name>yarpdatadumper</name>
+		<parameters>--name /dumperStandUpCODYCO/wholeBodyDynamicsTree/right_leg/Torques:o --type bottle  --rxTime</parameters>
+		<node>/icub01</node>
+	</module>
+	<connection>
+		<from>/wholeBodyDynamicsTree/right_leg/Torques:o</from>
+		<to>/dumperStandUpCODYCO/wholeBodyDynamicsTree/right_leg/Torques:o</to>
+		<protocol>udp</protocol>
+	</connection>
+	<module>
+		<name>yarpdatadumper</name>
+		<parameters>--name /dumperStandUpCODYCO/wholeBodyDynamicsTree/torso/Torques:o --type bottle  --rxTime</parameters>
+		<node>/icub01</node>
+	</module>
+	<connection>
+		<from>/wholeBodyDynamicsTree/torso/Torques:o</from>
+		<to>/dumperStandUpCODYCO/wholeBodyDynamicsTree/torso/Torques:o</to>
+		<protocol>udp</protocol>
+	</connection>
+	<module>
+		<name>yarpdatadumper</name>
+		<parameters>--name /dumperStandUpCODYCO/sendForcesAndWrench:o --type bottle  --rxTime</parameters>
+		<node>/icub01</node>
+	</module>
+	<connection>
+		<from>/sendForcesAndWrench:o</from>
+		<to>/dumperStandUpCODYCO/sendForcesAndWrench:o</to>
+		<protocol>udp</protocol>
+	</connection>
+	<module>
+		<name>yarpdatadumper</name>
+		<parameters>--name /dumperStandUpCODYCO/wholeBodyDynamicsTree/right_foot/cartesianEndEffectorWrench:o --type bottle  --rxTime</parameters>
+		<node>/icub01</node>
+	</module>
+	<connection>
+		<from>/wholeBodyDynamicsTree/right_foot/cartesianEndEffectorWrench:o</from>
+		<to>/dumperStandUpCODYCO/wholeBodyDynamicsTree/right_foot/cartesianEndEffectorWrench:o</to>
+		<protocol>udp</protocol>
+	</connection>
+	<module>
+		<name>yarpdatadumper</name>
+		<parameters>--name /dumperStandUpCODYCO/wholeBodyDynamicsTree/left_foot/cartesianEndEffectorWrench:o --type bottle  --rxTime</parameters>
+		<node>/icub01</node>
+	</module>
+	<connection>
+		<from>/wholeBodyDynamicsTree/left_foot/cartesianEndEffectorWrench:o</from>
+		<to>/dumperStandUpCODYCO/wholeBodyDynamicsTree/left_foot/cartesianEndEffectorWrench:o</to>
+		<protocol>udp</protocol>
+	</connection>
+	<module>
+		<name>yarpdatadumper</name>
+		<parameters>--name /dumperStandUpCODYCO/wholeBodyDynamicsTree/left_arm/cartesianEndEffectorWrench:o --type bottle  --rxTime</parameters>
+		<node>/icub01</node>
+	</module>
+	<connection>
+		<from>/wholeBodyDynamicsTree/left_arm/cartesianEndEffectorWrench:o</from>
+		<to>/dumperStandUpCODYCO/wholeBodyDynamicsTree/left_arm/cartesianEndEffectorWrench:o</to>
+		<protocol>udp</protocol>
+	</connection>
+	<module>
+		<name>yarpdatadumper</name>
+		<parameters>--name /dumperStandUpCODYCO/wholeBodyDynamicsTree/right_arm/cartesianEndEffectorWrench:o --type bottle  --rxTime</parameters>
+		<node>/icub01</node>
+	</module>
+	<connection>
+		<from>/wholeBodyDynamicsTree/right_arm/cartesianEndEffectorWrench:o</from>
+		<to>/dumperStandUpCODYCO/wholeBodyDynamicsTree/right_arm/cartesianEndEffectorWrench:o</to>
+		<protocol>udp</protocol>
+	</connection>
+	<module>
+		<name>yarpdatadumper</name>
+		<parameters>--name /dumperStandUpCODYCO/icubSim/left_arm/state:o --type bottle  --rxTime</parameters>
+		<node>/icub01</node>
+	</module>
+	<connection>
+		<from>/icubSim/left_arm/state:o</from>
+		<to>/dumperStandUpCODYCO/icubSim/left_arm/state:o</to>
+		<protocol>udp</protocol>
+	</connection>
+	<module>
+		<name>yarpdatadumper</name>
+		<parameters>--name /dumperStandUpCODYCO/icubSim/left_leg/state:o --type bottle  --rxTime</parameters>
+		<node>/icub01</node>
+	</module>
+	<connection>
+		<from>/icubSim/left_leg/state:o</from>
+		<to>/dumperStandUpCODYCO/icubSim/left_leg/state:o</to>
+		<protocol>udp</protocol>
+	</connection>
+	<module>
+		<name>yarpdatadumper</name>
+		<parameters>--name /dumperStandUpCODYCO/icubSim/right_arm/state:o --type bottle  --rxTime</parameters>
+		<node>/icub01</node>
+	</module>
+	<connection>
+		<from>/icubSim/right_arm/state:o</from>
+		<to>/dumperStandUpCODYCO/icubSim/right_arm/state:o</to>
+		<protocol>udp</protocol>
+	</connection>
+	<module>
+		<name>yarpdatadumper</name>
+		<parameters>--name /dumperStandUpCODYCO/icubSim/right_leg/state:o --type bottle  --rxTime</parameters>
+		<node>/icub01</node>
+	</module>
+	<connection>
+		<from>/icubSim/right_leg/state:o</from>
+		<to>/dumperStandUpCODYCO/icubSim/right_leg/state:o</to>
+		<protocol>udp</protocol>
+	</connection>
+	<module>
+		<name>yarpdatadumper</name>
+		<parameters>--name /dumperStandUpCODYCO/icubSim/torso/state:o --type bottle  --rxTime</parameters>
+		<node>/icub01</node>
+	</module>
+	<connection>
+		<from>/icubSim/torso/state:o</from>
+		<to>/dumperStandUpCODYCO/icubSim/torso/state:o</to>
+		<protocol>udp</protocol>
+	</connection>
+	<module>
+		<name>yarpdatadumper</name>
+		<parameters>--name /dumperStandUpCODYCO/wholeBodyDynamicsTree/com:o --type bottle  --rxTime</parameters>
+		<node>/icub01</node>
+	</module>
+	<connection>
+		<from>/wholeBodyDynamicsTree/com:o</from>
+		<to>/dumperStandUpCODYCO/wholeBodyDynamicsTree/com:o</to>
+		<protocol>udp</protocol>
+	</connection>
+	
+	<module>
+		<name>yarpdatadumper</name>
+		<parameters>--name /dumperStandUpCODYCO/wholeBodyDynamicsTree/left_arm/endEffectorWrench:o --type bottle  --rxTime</parameters>
+		<node>/icub01</node>
+	</module>
+	<connection>
+		<from>/wholeBodyDynamicsTree/left_arm/endEffectorWrench:o</from>
+		<to>/dumperStandUpCODYCO/wholeBodyDynamicsTree/left_arm/endEffectorWrench:o</to>
+		<protocol>udp</protocol>
+	</connection>
+	
+		<module>
+		<name>yarpdatadumper</name>
+		<parameters>--name /dumperStandUpCODYCO/wholeBodyDynamicsTree/right_arm/endEffectorWrench:o --type bottle  --rxTime</parameters>
+		<node>/icub01</node>
+	</module>
+	<connection>
+		<from>/wholeBodyDynamicsTree/right_arm/endEffectorWrench:o</from>
+		<to>/dumperStandUpCODYCO/wholeBodyDynamicsTree/right_arm/endEffectorWrench:o</to>
+		<protocol>udp</protocol>
+	</connection>
+
+
+
+
+	
+</application>
