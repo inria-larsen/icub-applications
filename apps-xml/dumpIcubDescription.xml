@@ -10,39 +10,39 @@
 
 <!-- joints -->
 <module>
-   	 <name>dataDumper</name>
+   	 <name>yarpdatadumper</name>
 	 <parameters>--name /DUMP_icub_description/head --type bottle --rxTime</parameters>
 	 <node>icub01</node>
 	 <tag>head-joints</tag>
 </module>
 <module>
-    <name>dataDumper</name>
+    <name>yarpdatadumper</name>
 	<parameters>--name /DUMP_icub_description/leftArm --type bottle --rxTime</parameters>
 	<node>icub01</node>
 	<stdio>icub01</stdio>
 	<tag>left-arm-joints</tag>
 </module>
 <module>
-    <name>dataDumper</name>
+    <name>yarpdatadumper</name>
 	<parameters>--name /DUMP_icub_description/rightArm --type bottle --rxTime</parameters>
 	<node>icub01</node>
 	<tag>right-arm-joints</tag>
 </module>
 <module>
-    <name>dataDumper</name>
+    <name>yarpdatadumper</name>
 	<parameters>--name /DUMP_icub_description/torso --type bottle --rxTime</parameters>
 	<node>icub01</node>
 	<tag>torso-joints</tag>
 </module>
 <module>
-    <name>dataDumper</name>
+    <name>yarpdatadumper</name>
 	<parameters>--name /DUMP_icub_description/leftLeg --type bottle --rxTime</parameters>
 	<node>icub01</node>
 	<stdio>icub01</stdio>
 	<tag>left-leg-joints</tag>
 </module>
 <module>
-    <name>dataDumper</name>
+    <name>yarpdatadumper</name>
 	<parameters>--name /DUMP_icub_description/rightLeg --type bottle --rxTime</parameters>
 	<node>icub01</node>
 	<tag>right-leg-joints</tag>
@@ -50,7 +50,7 @@
 
 <!-- waist -->
 <module>
-    <name>dataDumper</name>
+    <name>yarpdatadumper</name>
 	<parameters>--name /DUMP_icub_description/waist --type bottle --rxTime</parameters>
 	<node>icub01</node>
 	<tag>waist</tag>
@@ -58,13 +58,13 @@
 
 <!-- foot analog -->
 <module>
-    <name>dataDumper</name>
+    <name>yarpdatadumper</name>
 	<parameters>--name /DUMP_icub_description/rightFootAnalog --type bottle --rxTime</parameters>
 	<node>icub01</node>
 	<tag>right-foot-analog</tag>
 </module>
 <module>
-    <name>dataDumper</name>
+    <name>yarpdatadumper</name>
 	<parameters>--name /DUMP_icub_description/leftFootAnalog --type bottle --rxTime</parameters>
 	<node>icub01</node>
 	<tag>left-foot-analog</tag>
