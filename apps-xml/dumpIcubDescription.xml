@@ -109,7 +109,7 @@
 
 <!-- waist -->
 <connection>
-  <from>/icub_description/waist:o</from>
+  <from>/icub_description/waist/vector:o</from>
   <to>/DUMP_icub_description/waist</to>
   <protocol>udp</protocol>
 </connection>
