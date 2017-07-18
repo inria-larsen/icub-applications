@@ -69,6 +69,26 @@
     </module>
 
 
+       <module>  
+   <name>grasper</name>
+        <parameters> --from grasper.ini</parameters>
+           <dependencies>
+        </dependencies>
+        <stdio>icub01</stdio>
+        <node>icub01</node>
+    </module>
+
+    <module>  
+   <name>yarp rpc</name>
+        <parameters> --client /client/grasp:o</parameters>
+           <dependencies>
+        </dependencies>
+        <stdio>icub01</stdio>
+        <node>icub01</node>
+    </module>
+
+
+
     <connection>
           <from>/wholeBodyDynamicsTree/left_arm/cartesianEndEffectorWrench:o</from>
           <to>/record/read</to>
@@ -114,5 +134,19 @@
           <to>/icub/speech:rpc</to>
           <protocol>udp</protocol>
     </connection>
+
+    
+     <connection>
+          <from>/matlab/grasp:o</from>
+          <to>/grasper/rpc:i</to>
+          <protocol>udp</protocol>
+    </connection>
+    
+      <connection>
+          <from>/client/grasp:o</from>
+          <to>/grasper/rpc:i</to>
+          <protocol>tcp</protocol>
+    </connection>
+
 
 </application>
