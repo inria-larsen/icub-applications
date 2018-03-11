@@ -1,0 +1,43 @@
+<application>
+<name>NANCY: Yarpscope - feet FTS</name>
+<dependencies>
+	<port>/icub/right_foot/analog:o</port>
+	<port>/icub/left_foot/analog:o</port>
+</dependencies>
+
+<module>
+	<name>yarpscope</name>
+	<parameters>--remote /icub/right_foot/analog:o --index "(0 1 2)" --color "(red green blue)"</parameters>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
+	<tag>rfts-forces</tag>
+</module>
+<module>
+	<name>yarpscope</name>
+	<parameters>--remote /icub/left_foot/analog:o --index "(0 1 2)" --color "(red green blue)"</parameters>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
+	<tag>lfts-forces</tag>
+</module>
+<module>
+	<name>yarpscope</name>
+	<parameters>--remote /icub/right_foot/analog:o --index "(3 4 5)" --color "(red green blue)"</parameters>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
+	<tag>rfts-moments</tag>
+</module>
+<module>
+	<name>yarpscope</name>
+	<parameters>--remote /icub/left_foot/analog:o --index "(3 4 5)" --color "(red green blue)"</parameters>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
+	<tag>lfts-moments</tag>
+</module>
+
+
+
+
+
+</application>
+
+

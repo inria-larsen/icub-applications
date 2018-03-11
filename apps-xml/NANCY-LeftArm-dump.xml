@@ -1,0 +1,133 @@
+<application>
+<name>NANCY: Dump upperbody with FTS</name>
+<dependencies>
+	<port>/icub/left_arm/state:o</port>
+	<port>/icub/cartesianController/left_arm/state:o</port>
+	<port>/wholeBodyDynamics/left_arm/cartesianEndEffectorWrench:o</port>
+	<port>/wholeBodyDynamics/left_arm/endEffectorWrench:o</port>
+</dependencies>
+
+<!-- JOINTS -->
+
+<module>
+	<name>yarpdatadumper</name>
+	<parameters>--name /dump_upperbody/leftArm --type bottle --rxTime</parameters>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
+	<tag>left-arm-joints</tag>
+</module>
+
+
+<!-- FT sensor -->
+<module>
+	<name>yarpdatadumper</name>
+	<parameters>--name /dump_upperbody/leftArmFTS --type bottle --rxTime</parameters>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
+	<tag>left-arm-ft-sensor</tag>
+</module>
+
+<!-- torques -->
+<module>
+	<name>yarpdatadumper</name>
+	<parameters>--name /dump_leftArm/leftArmTorques --type bottle --rxTime</parameters>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
+	<tag>left-arm-ft-torque</tag>
+</module>
+
+
+<!-- skin contacts -->
+<module>
+	<name>yarpdatadumper</name>
+	<parameters>--name /dump_leftArm/skinContacts --type bottle --rxTime</parameters>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
+	<tag>skin-events</tag>
+</module>
+
+
+<!-- cartesian position -->
+<module>
+	<name>yarpdatadumper</name>
+    <parameters>--name /dump_leftArm/cartesianController/left_arm/state:o --type bottle  --rxTime</parameters>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
+	<tag>cartPos-events</tag>
+</module>
+
+	    
+<!-- cartesianEndEffectorWrench -->
+<module>
+	<name>yarpdatadumper</name>
+    <parameters>--name /dump_leftArm/wholeBodyDynamics/left_arm/cartesianEndEffectorWrench:o --type bottle  --rxTime</parameters>
+	<node>icub01</node>
+	<stdio>icub01</stdio>
+	<tag>cartEndWrench-events</tag>
+</module>
+
+<!-- EndEffectorWrench -->
+<module>
+     <name>yarpdatadumper</name>
+     <parameters>--name /dump_leftArm/wholeBodyDynamics/left_arm/endEffectorWrench:o --type bottle  --rxTime</parameters>
+     <node>icub01</node>
+</module>
+
+
+<!-- joints -->
+
+<connection>
+  <from>/icub/left_arm/state:o</from>
+  <to>/dump_leftArm/leftArm</to>
+  <protocol>udp</protocol>
+</connection>
+
+
+<!-- FT sensor -->
+<connection>
+  <from>/icub/left_arm/analog:o</from>
+  <to>/dump_leftArm/leftArmFTS</to>
+  <protocol>udp</protocol>
+</connection>
+
+
+<!-- torques -->
+<connection>
+  <from>/wholeBodyDynamics/left_arm/Torques:o</from>
+  <to>/dump_leftArm/leftArmTorques</to>
+  <protocol>udp</protocol>
+</connection>
+
+
+<!-- skin contacts -->
+<connection>
+  <from>/skinManager/skin_events:o</from>
+  <to>/dump_leftArm/skinContacts</to>
+  <protocol>udp</protocol>
+</connection>
+
+
+<!-- cartesian position -->
+<connection>
+     <from>/icub/cartesianController/left_arm/state:o</from>
+     <to>/dump_leftArm/cartesianController/left_arm/state:o</to>
+     <protocol>udp</protocol>
+</connection>
+
+<!-- cartesianEndEffectorWrench -->
+<connection>
+    <from>/wholeBodyDynamics/left_arm/cartesianEndEffectorWrench:o</from>
+    <to>/dump_leftArm/wholeBodyDynamics/left_arm/cartesianEndEffectorWrench:o</to>
+    <protocol>udp</protocol>
+</connection>
+    
+<!-- EndEffectorWrench -->
+<connection>
+    <from>/wholeBodyDynamics/left_arm/endEffectorWrench:o</from>
+    <to>/dump_leftArm/wholeBodyDynamics/left_arm/endEffectorWrench:o</to>
+    <protocol>udp</protocol>
+</connection>
+
+</application>
+
+
